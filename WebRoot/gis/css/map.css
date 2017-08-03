@@ -1,0 +1,83 @@
+body {
+	
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";
+}
+
+table {
+	font-size: 1em;
+}
+
+table { width:90%; margin:0 auto; border:1px solid gray; border-collapse: collapse; }
+table caption { font-size:0.8em; font-family:'楷体'; }
+table thead {}
+table tbody {}
+table tfoot {}
+table tr {}
+table th { height:40px; padding:2px; border:1px solid gray; }
+table td { height:35px; padding:2px; text-align:center; border:1px solid gray; }
+
+table.table_blue tr:nth-child(even) { background:#ffffff; }
+table.table_blue tr:nth-child(odd) { background:#cccccc; }
+table.table_blue th { background:#aaccff; }
+
+.demo-description {
+	clear: both;
+	padding: 12px;
+	font-size: 1.3em;
+	line-height: 1.4em;
+}
+
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+
+.ui-menu {
+	position: absolute;
+	width: 100px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0px;
+}
+
+fieldset label,fieldset input {
+	display: block;
+}
+
+input.text {
+	margin-bottom: 12px;
+	width: 95%;
+	padding: .4em;
+}
+
+fieldset {
+	padding: 0;
+	border: 0;
+	margin-top: 25px;
+}
+
+.legendItemHeader {
+	top: 5px;
+	width: 100px;
+	height: 18px;
+	text-align: center;
+}
+
+.legendItemValue {	
+	width: 120px;
+	text-align: center;
+	height: 28px;
+}
+#progressbar {
+		margin-top: 20px;
+	}
+
+	.progress-label {
+		font-weight: bold;
+		text-shadow: 1px 1px 0 #fff;
+	}
+
+	.ui-dialog-titlebar-close {
+		display: none;
+	}

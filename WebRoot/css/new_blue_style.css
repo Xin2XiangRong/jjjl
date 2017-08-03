@@ -1,0 +1,335 @@
+.gray-bg {
+	background-color: #edeef1;
+}
+
+.white-bg {
+	background-color: #fff;
+}
+
+/******** top ********/
+
+.toppage {
+	background-image: url(../images/top-bule.png); /*背景图片*/
+	margin: 0px 0px 0px 0px; /*去除四周默认的margin*/
+	height: 78px; /*高度值设置为背景图片高度*/
+}
+
+.toplogo {
+	background: url(../images/logo.png); /*logo图片*/
+	margin-top: 16px; /*设置为页面高度和logo图片高度差的一半*/
+	margin-left: 20px; /*logo图片与页面左端空出的位置*/
+	margin-right: 50px; /*logo图片与右端文字空出的位置*/
+	width: 386px; /*logo图片的宽度*/
+	height: 46px; /*logo图片的高度*/
+	float: left; /*让div一行显示*/
+}
+
+.topmenu {
+	width: 400px; /*根据span的宽度和个数设置*/
+	height: 78px; /*与页面高度一致*/
+	float: left; /*让div一行显示*/
+}
+
+.topmenu span {
+	width: 200px; /*span宽度，根据文字长度设置*/
+	height: 78px; /*与页面高度一致*/
+	line-height: 78px; /*与页面高度一致*/
+	text-align: center; /*居中显示文字*/
+	float: left;
+}
+
+.topmenu span a {
+	font-size: 1.1em; /*字体大小*/
+	color: #fff; /*字体颜色*/
+	font-family: 微软雅黑; /*字体*/
+	text-decoration: none; /*链接下划线取消*/
+}
+
+.topmenu span:hover {
+	background-image: url(../images/dark-bule.png); /*鼠标放上显示的背景图片*/
+	cursor: pointer; /*鼠标放上鼠标显示手的形状*/
+}
+
+.topuser {
+	width: 128px; /*div宽度，根据内部的图片链接数量设置*/
+	height: 78px; /*与页面高度一致*/
+	float: right; /*让div一行显示*/
+}
+
+.topuser span {
+	width: 64px; /*span宽度，根据文字长度设置*/
+	height: 78px; /*与页面高度一致*/
+	line-height: 78px; /*与页面高度一致*/
+	text-align: center; /*居中显示文字*/
+	float: left;
+}
+
+.topuser span img {
+	width: 32px;
+	height: 32px;
+	margin-top: 23px; /*与页面高度一致*/
+}
+
+.topuser span:hover {
+	background-image: url(../images/dark-bule.png); /*鼠标放上显示的背景图片*/
+	cursor: pointer; /*鼠标放上鼠标显示手的形状*/
+}
+
+/******** top end ********/
+
+
+
+/******** left ********/
+
+.leftpage {
+	width: 200px; /*宽度*/
+	height: 95%; /*高度*/
+	margin-top: 15px; /*与顶部的空白空间*/
+	background-color: #fff; /*背景颜色为白色*/
+}
+
+.lefttitle {
+	background: url(../images/tab-icon.png) no-repeat; /*左侧的图标*/
+	margin-top: 15px; /*上方方留出的空间*/
+	margin-left: 20px; /*左侧空的空间，与logo图片对齐*/
+	width: 180px; /*父元素的宽度减去空出的宽度*/
+	height: 32px; /*行高*/
+}
+
+.lefttitle span {
+	padding-left: 40px; /*空出左侧图标的位置并一点空隙*/
+	height: 32px; /*行高*/
+	line-height: 32px; /*行高*/
+	color: #000; /*字体颜色*/
+	font-size: 16px; /*字体大小*/
+	font-family: 微软雅黑; /*字体*/
+}
+
+.leftmenu {
+	width: 200px; /*宽度*/
+	height: 28px; /*行高*/
+}
+
+.leftmenu span {
+	margin-left: 0px; /*与父元素保持一样的大小以便在选中时显示背景阴影*/
+	width: 200px;
+	height: 28px; /*行高*/
+	line-height: 28px; /*行高*/
+	display: inline-block; /*inline对象设置宽度和高度无效，设置为inline-block即可以设置宽度和高度，以显示选中时的阴影*/
+}
+
+.leftmenu span a {
+	padding-left: 60px; /*空出左侧图标的位置并一点空隙，与lefttitle文字对齐*/
+	text-decoration: none; /*链接下划线取消*/
+	color: #000; /*字体颜色*/
+	font-size: 14px; /*字体大小*/
+	font-family: 微软雅黑; /*字体*/
+}
+
+.leftmenu span:hover {
+	background: #e1e5ee; /*鼠标放上显示的背景颜色*/
+	cursor: pointer; /*鼠标放上鼠标显示手的形状*/
+}
+
+.leftmenu span a:hover {
+	color: #1760d5; /*鼠标放上显示的文字颜色*/
+	font-size: 15px; /*鼠标放上显示的文字大小*/
+}
+
+.menuselected {
+	color: #1760d5;
+	font-size: 15px;
+}
+
+/******** left end ********/
+
+
+
+/******** tb_blue2表格样式  ********/
+
+.tb_blue2 {
+	margin: 15px 15px 15px 15px;
+	padding-right:5px;
+}
+
+.tb_blue2 table {
+	border:2px solid #bfc4ca;
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+}
+
+.tb_blue2 td {
+	height:32px;
+	border-left:1px solid #bfc4ca;
+	border-right:1px solid #bfc4ca;		
+	border-bottom:1px dotted #bfc4ca;
+	line-height:20px;
+	padding:2px 2px 2px 2px;
+	font-size:14px;
+	text-align:center;		
+	cursor:hand;
+}
+
+.tb_blue2 .title td {
+	height:33px;
+	background:#bfc4ca; /*  */	
+	border:1px solid #DEE9F4;
+	font-size:12px;
+	text-align:center;
+	font-weight:bold;
+	color:#fff;
+}
+.tb_blue2 th {
+	height:32px;
+	border:1px solid #bfc4ca;	
+	line-height:20px;
+	padding:2px 2px 2px 5px;
+	font-size:12px;
+	text-align:center;	
+	background:#e1e5ee;
+	cursor:hand;
+}
+.tb_blue2 .tr_over td{
+	background-color:#f2f2f2;
+	cursor:hand;
+}
+.tb_blue2 .tr_out td{
+}
+.tb_blue2 a:link ,
+.tb_blue2 a:active ,
+.tb_blue2 a:visited {
+	display: block;
+	color:#3B99CC;
+	font-weight:bold;
+	text-decoration:none ; 
+	border: 0px solid #fff;
+	background: url(../images/red/bg_title_2.gif-) repeat-x 0 -3px;
+}
+
+.tb_blue2 a:hover {
+	display: block;
+	color:#E60;
+	font-weight:bold;
+	text-decoration:none ; 
+	border: 0px solid #e60;
+}
+
+.table_content {
+	background-color: #fff;
+	margin: 15px 15px 15px 15px;
+	padding-bottom: 5px;
+}
+
+.table_content span {
+	height: 40px; /*行高*/
+	line-height: 40px; /*行高*/
+	display: inline-block; /*inline对象设置宽度和高度无效，设置为inline-block即可以设置宽度和高度，以显示选中时的阴影*/
+	font-size: 16px;
+	font-family: 微软雅黑; /*字体*/
+	margin-left: 15px;
+}
+
+.input_gray {
+	margin-left: 30px; 
+	width: 250px; 
+	height: 30px;
+	font-size: 14px; 
+	background: #f3f3f3; 
+	border: 1px solid #CCC;
+}
+
+.select_gray {
+	margin-left: 30px; 
+	width: 250px; 
+	height: 30px;
+	font-size: 14px; 
+	background: #f3f3f3; 
+	border: 1px solid #CCC;
+	appearance: none;
+	-moz-appearance: none;
+  	-webkit-appearance: none;
+}
+
+.but_blue {
+	margin-left: 30px;
+	height: 30px;
+	width: 70px;
+	line-height:30px;
+	background: #165fd5;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	color: #fff;
+	text-align: center;
+	display: inline-block;
+}
+
+.but_blue_small {
+	height: 20px;
+	width: 40px;
+	line-height:20px;
+	background: #165fd5;
+	font-size: 12px;
+	font-family: 微软雅黑;
+	color: #fff;
+	text-align: center;
+	display: inline-block;
+}
+
+.but_blue_border {
+	margin-right: 30px;
+	height: 30px;
+	width: 120px;
+	line-height:30px;
+	background: #fff;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	color: #165fd5;
+	text-align: center;
+	float: right;
+	border-color: #165fd5;
+	border-style:solid; 
+	border-width:1px;
+}
+
+.but_blue_border_small {
+	height: 20px;
+	width: 40px;
+	line-height:20px;
+	background: #fff;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	color: #165fd5;
+	text-align: center;
+	border-color: #165fd5;
+	border-style:solid; 
+	border-width:1px;
+	display: inline-block;
+}
+
+.page_blue {
+	height: 27px;
+	line-height: 27px;
+	font-size: 12px;
+	font-family: 微软雅黑;
+	color: #000;
+	margin-top: 50px;
+}
+
+.page_blue span {
+	margin: 0px 5px 0px 5px;
+	border-color: #edeef1;
+	border-style:solid; 
+	border-width:1px;
+	width: 27px;
+	display: inline-block;
+}
+
+/******** tb_blue2 end ********/
+
+.footnav{ 
+	background-image: url(../images/footer.png); /*背景图片*/
+	margin: 0px 0px 0px 0px; /*去除四周默认的margin*/ 
+	height:35px; 
+	line-height:35px;
+	text-align:center;
+	color: #fff;
+}

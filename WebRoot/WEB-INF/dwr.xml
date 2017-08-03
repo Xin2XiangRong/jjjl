@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://www.getahead.org/dwr/dwr30.dtd">
+
+<dwr>
+
+	<allow>
+		<create creator="spring" javascript="jlCityBServiceImpl">
+			<param name="beanName" value="jlCityBServiceImpl" />
+			<include method="findByMapid"/>
+		</create>
+		<!-- 要转换的Bean -->
+		<convert converter="bean" match="com.dxsjl.data.JlCityB" />
+		
+		<create creator="spring" javascript="jlCountyBServiceImpl">
+			<param name="beanName" value="jlCountyBServiceImpl" />
+			<include method="findByCityCd"/>
+		</create>
+		<!-- 要转换的Bean -->
+		<convert converter="bean" match="com.dxsjl.data.JlCountyB" />
+		
+		<create creator="spring" javascript="jlTownBServiceImpl">
+			<param name="beanName" value="jlTownBServiceImpl" />
+			<include method="findByCountyCd"/>
+		</create>
+		<!-- 要转换的Bean -->
+		<convert converter="bean" match="com.dxsjl.data.JlTownB" />
+		
+		<create creator="spring" javascript="jlVillageBServiceImpl">
+			<param name="beanName" value="jlVillageBServiceImpl" />
+			<include method="findByXiangCd"/>
+		</create>
+		<!-- 要转换的Bean -->
+		<convert converter="bean" match="com.dxsjl.data.JlVillageB" />
+					
+	</allow>	
+</dwr>

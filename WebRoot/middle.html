@@ -1,0 +1,41 @@
+<HTML>
+  <HEAD>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script>
+		function switch_frame() {
+			if (img_button.value=="left_top") {
+				img_button.innerHTML = "<img src=\"images/rightbj.gif\">";
+				img_button.value = "right_bottom";
+				//parent.main_frame_top.rows="125,*,35"  //109改为0 按right_bottom时top也隐藏了//
+				parent.main_frame.cols="0,10,*"
+		//		img_button_td.style.backgroundColor='#99cc66';
+			}
+			else {
+				img_button.innerHTML="<img src=\"images/leftbj.gif\">";
+				img_button.value="left_top";
+				//parent.main_frame_top.rows="125,*,35"
+				parent.main_frame.cols="208,10,*"
+				
+		//		img_button_td.style.backgroundColor='';
+			}
+		}
+		
+		function exe_menu_switch() {
+			img_button.value = "left_top";
+		}
+	
+	</script>
+  </HEAD>
+
+  <BODY scroll="no" style="margin:0px;BACKGROUND-COLOR: #f1f3ff" onLoad="exe_menu_switch()">
+	<table width="10" height="100%" border=0 cellpadding=0 cellspacing=0 style="width:10px;height:100%;">
+		<tr>
+			<td align="center" valign="middle">
+				<span id="img_button" onClick="switch_frame()" value="left_top" style="cursor:pointer;" title="隐藏/显示框架">
+					<img src="images/leftbj.gif" WIDTH="8" HEIGHT="50">
+				</span>
+			</td>
+		</tr>
+	</table>
+  </BODY>
+</HTML>

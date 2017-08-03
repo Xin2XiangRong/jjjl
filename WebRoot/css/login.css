@@ -1,0 +1,52 @@
+/* CSS Document */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background:#1E9B82;
+	background-image:url(../images/bg_login.gif);
+}
+html{
+	FILTER:Gray;
+}
+.box{
+	background-image:url(../images/login_2.png);
+}
+#tb{/*登录栏样式*/
+	padding-top:180px;
+	padding-left:330px;
+}
+#tb .text  {	
+	float:left;
+	font-weight:normal;
+	font-size:12px;
+	color:#fff;
+	font-weight:bold;
+}
+
+#tb .text p  {
+	padding-left:12px;
+}
+#copyright{
+	margin:0px 0px 0px 500;
+	width:500px;
+	font-size:12px;
+}
+
+.btn{	 /* 按钮 */
+	margin:0px 0px 0 0;
+	background:url(../images/btn.png ) ;
+	width:61px;
+	height:20px;
+	border: 0px solid  #485D78;
+	font-family: "宋体";
+	text-align:center;
+	text-valign:center;
+	font-size: 12px;
+	color:#fff;  
+}
+.bar{/*输入框样式*/
+	border:1px solid #037F1C
+   
+}
