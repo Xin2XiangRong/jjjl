@@ -41,7 +41,7 @@ Object jsonListH=request.getSession().getAttribute("jsonListH");
 			$(this).attr("font-size", "1.2em");
 		});
 		
-		
+	
 		var modelWAT=<%=jsonListWAT%>;
 		var modelWAF=<%=jsonListWAF%>;
 		var modelWAI=<%=jsonListWAI%>;
@@ -131,17 +131,57 @@ Object jsonListH=request.getSession().getAttribute("jsonListH");
                 ]
 
             });
+            
+           
         });
-    	
+        
+       function queryFenxiW() {
+      	var mycheck=document.getElementById("fenxiW");
+      	var objW=document.getElementById("jqChartS");
+      	if(mycheck.checked) {
+      		objW.style.display="block";
+      		}
+      	else {
+      		objW.style.display="none";
+      	}
+      }
+       
+       function queryFenxiR() {
+      	var mycheck=document.getElementById("fenxiR");
+      	var objR=document.getElementById("jqChartP");
+      	if(mycheck.checked) {
+      		objR.style.display="block";
+      		}
+      	else {
+      		objR.style.display="none";
+      	}
+      }
+      
+      function queryFenxiH() {
+      	var mycheck=document.getElementById("fenxiH");
+      	var objH=document.getElementById("jqChartH");
+      	if(mycheck.checked) {
+      		objH.style.display="block";
+      		}
+      	else {
+      		objH.style.display="none";
+      	}
+      }     	
     </script>
   </head>  
   <body class="gray-bg" style="margin: 0px 0px 0px 0px; overflow-y:auto;">
-  	<div id="jqChartS" style="width: 800px; height: 300px;">
+  	<div class="table_content">
+  	<div style="margin: -15px 10px 20px">
+  	<input type="checkbox" id="fenxiW" name="fenxi" value="water" checked="checked" onclick="queryFenxiW() ">显示用水量
+	<input type="checkbox" id="fenxiR" name="fenxi" value="ratio" onchange="queryFenxiR() ">显示用水占比
+	<input type="checkbox" id="fenxiH" name="fenxi" value="entropy" onchange="queryFenxiH() ">显示用水结构信息熵
+	</div>
+  	<div id="jqChartS" style="margin:0 auto; width: 800px; height: 300px;">
     </div>
-	<div id="jqChartP" style="width: 800px; height: 300px;">
+	<div id="jqChartP" style="display:none; margin:0 auto; width: 800px; height: 300px;">
     </div>
-	<div id="jqChartH" style="width: 800px; height: 300px;">
+	<div id="jqChartH" style="display:none; margin:0 auto; width: 800px; height: 300px;">
     </div>
-   
+   	</div>
   </body>
 </html>

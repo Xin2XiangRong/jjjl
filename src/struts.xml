@@ -71,12 +71,12 @@
 	<package name="hz" namespace="/hz" extends="struts-default">
 		<action name="queryCity" class="com.jjjl.action.control.HuiZongAction"
 			method="queryCity">
-			<result name="success">/huiZong/resultHuiZong.jsp</result>
+			<result name="success">/huiZong/resultHuiZongC.jsp</result>
 			<result name="nodata">/nodata.jsp</result>
 		</action>	
 		<action name="queryYear" class="com.jjjl.action.control.HuiZongAction"
 			method="queryYear">
-			<result name="success">/huiZong/resultHuiZong.jsp</result>
+			<result name="success">/huiZong/resultHuiZongY.jsp</result>
 			<result name="nodata">/nodata.jsp</result>		
 		</action>
 		<action name="analyseCity" class="com.jjjl.action.control.FenXiAction"

@@ -21,6 +21,9 @@
 		 window.parent.document.getElementById("form").submit();
 		return false;
 	}
+	function clickdel(){
+		return confirm("删除请点击确认");
+	}	
 </script>
 </head>
 
@@ -50,7 +53,7 @@
 						<td><s:property value="#user.userid" /></td>
 						<td><s:property value="#user.username" />&nbsp;</td>
 						<td><s:property value="#user.telphone" /></td>
-						<td><div class="but_blue_small" style="width:70px"><a href="xt/delete.action?userid=<s:property value="#user.userid"/>" target="_self">删除</a></div></td>					
+						<td><div class="but_blue_small" style="width:70px"><a href="xt/delete.action?userid=<s:property value="#user.userid"/>"  onclick='return clickdel()' target="_self">删除</a></div></td>					
 					</tr>
 				</s:iterator>
 			</table>

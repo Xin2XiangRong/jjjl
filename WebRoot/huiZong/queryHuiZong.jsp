@@ -16,11 +16,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        	setTimeout(formYear_submit()
-        	,1000);
-        	setTimeout(formCity_submit()
+
+        	setTimeout(querySum()
         	,1000);
         });
+      
+      function querySum() {
+      	var obj=$('input:radio:checked').val();
+      	var objY=document.getElementById("formYear");
+      	var objC=document.getElementById("formCity");
+      	var ifrY=document.getElementById("resultY");
+      	var ifrC=document.getElementById("resultC");
+      	
+      	if(obj=="city") {
+      		objY.style.display="none";
+      		objC.style.display="block";
+      		formCity_submit();
+      		ifrY.style.display="none";
+      		ifrC.style.display="block";
+      	} else  if(obj=="year"){
+      		objC.style.display="none";
+      		objY.style.display="block";
+      		formYear_submit();
+      		ifrY.style.display="block";
+      		ifrC.style.display="none";
+      	}
+      }
       
       function formYear_submit() {
       	$("#formYear").submit();
@@ -31,11 +52,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </script>
   </head>  
   <body class="gray-bg">
-    <div class="table_content" style="margin-bottom: 0px;">
+    <div class="table_content" style="margin-bottom: -5px;">
 		<span>行政区用水汇总</span>
 		<hr	style="height:1px;border:none;border-top:1px solid #165fd5; margin: 0px 0px 10px 0px;" />
-	   
-	    <form id="formYear" name="formYear" action="hz/queryYear.action" method="post" target="result">
+		<div style="margin-bottom: 5px;">
+			<input id="sum" name="sum" type="radio" value="city" checked="checked"  onclick="querySum()"/>按城市查询
+			<input id="sum" name="sum" type="radio" value="year" onclick="querySum()"/>按年份查询
+		</div>
+	    <form id="formYear" name="formYear" action="hz/queryYear.action" method="post" target="resultY">
 			<select id="year" name="year" style="width:120px" class="select_gray" onchange="formYear_submit()">
 					<option value="2014">2014</option>
 					<option value="2013">2013</option>
@@ -52,7 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</form>
 		
 		<form id="formCity" name="formCity" action="hz/queryCity.action"
-	    	method="post" target="result">
+	    	method="post" target="resultC">
 			<span style="height: 30px; line-height:30px; font-size: 14px;">山西省</span>
 			<select id="cityCd" name="cityCd" style="width:120px" class="select_gray" onchange="formCity_submit()">
 					<option value="1401">太原市</option>
@@ -70,7 +94,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<span style="height: 30px; line-height:30px; font-size: 14px;">近十年用水汇总</span>
 		</form>
 	</div>
-	<iframe name="result" src="waiting.jsp" width="100%" height="80%"
+	<iframe id="resultY" name="resultY" src="waiting.jsp" width="100%" height="80%"
+		frameborder="0"></iframe>
+		<iframe id="resultC" name="resultC" src="waiting.jsp" width="100%" height="80%"
 		frameborder="0"></iframe>
   </body>
 </html>

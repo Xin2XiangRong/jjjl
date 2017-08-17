@@ -52,7 +52,7 @@
 						<td><s:property value="#wellB.wellCd" /></td>
 						<td><s:property value="#wellB.wellNm" />&nbsp;</td>
 						<td><s:property value="#wellB.getJlTownB().getXiangNm()" /></td>
-						<td><div class="but_blue_small" style="width:70px"><a href="wh/toMonitor.action?wellCd=<s:property value="#wellB.wellCd"/>" target="_blank">设为监测井</a></div></td>						
+						<td><div class="but_blue_small" style="width:70px"><a href="wh/toMonitor.action?wellCd=<s:property value="#wellB.wellCd"/>" target="_self">设为监测井</a></div></td>						
 						<td><div class="but_blue_small"><a href="wh/edit.action?wellCd=<s:property value="#wellB.wellCd"/>" target="_blank">修改</a></div></td>
 						<td><div class="but_blue_small"><a href="wh/delete.action?wellCd=<s:property value="#wellB.wellCd"/>" onclick='return clickdel()' target="_self">删除</a></div></td>					
 					</tr>

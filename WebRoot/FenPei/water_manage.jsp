@@ -40,6 +40,7 @@
 </style>
 </head>
 <body>
+	<div class="table_content">
 	<div class="tb_blue2">
 			<table height="90%" width="100%" border="0" cellspacing="0" align="center"
 				cellpadding="0" >
@@ -86,6 +87,7 @@
 				</tr>
 				</s:iterator>
 			</table>
+	</div>
 	</div>
 </body>
 </html>

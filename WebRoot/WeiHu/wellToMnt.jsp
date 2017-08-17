@@ -61,8 +61,9 @@
 </head>
 <body>
 	<form id="form" name="form" action="wh/doMonitor.action" method="post" >
-	<div id="accordion1" class="accordion">
-		<h3 style="font-size: 1.1em; font-weight: bold;">监测井信息</h3>
+	<div class="table_content">
+		<span>添加监测井信息</span>
+		<hr	style="height:1px;border:none;border-top:1px solid #165fd5; margin: 0px 0px 10px 0px;" />
 		<div class="tb_blue2">
 			<input type="hidden" name="autoWellB.wellCd" value="${ session.wellEdit.wellCd}"/>
 			<table height="30" width="60%" border="0" cellspacing="0" align="center"

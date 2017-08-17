@@ -115,6 +115,7 @@ function countyCallback2(data){
 </style>
 </head>
 <body>
+	<div class="table_content">
 	<form id="form" name="form" action="fp/doTransact.action" method="post">
 	<div>
 		<div class="tb_blue2">
@@ -192,5 +193,6 @@ function countyCallback2(data){
 	<!-- 为了实现页面不跳转 -->
 	<iframe id="id_iframe" name="nm_iframe" height="35%" width="100%" frameborder="0" scrolling="auto" ></iframe>
 	<div id="submit" class="but_blue" style="margin:0 50%" >确认添加</div>
+</div>
 </body>
 </html>

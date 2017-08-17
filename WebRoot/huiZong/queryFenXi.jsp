@@ -19,18 +19,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	setTimeout(formCity_submit()
         	,1000);
         });
+        
+     
+        
       function formCity_submit() {
       	$("#formCity").submit();
       }
     </script>
   </head>  
   <body class="gray-bg">
-    <div class="table_content" style="margin-bottom: 0px;">
+    <div class="table_content" style="margin-bottom: -10px;">
 		<span>行政区数据分析</span>
 		<hr	style="height:1px;border:none;border-top:1px solid #165fd5; margin: 0px 0px 10px 0px;" />
 		
-		<form id="formCity" name="formCity" action="hz/analyseCity.action"
-	    	method="post" target="result">
+		<form id="formCity" name="formCity" action="hz/analyseCity.action" method="post" target="result">
+			<div id="forhid"></div>
 			<span style="height: 30px; line-height:30px; font-size: 14px;">山西省</span>
 			<select id="cityCd" name="cityCd" style="width:120px" class="select_gray" onchange="formCity_submit()">
 					<option value="1401">太原市</option>
@@ -45,10 +48,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<option value="1410">临汾市</option>
 					<option value="1411">吕梁市</option>
 			</select>
-			<span style="height: 30px; line-height:30px; font-size: 14px;">用水结构分析</span>
+			<span style="height: 30px; line-height:30px; font-size: 14px;">用水结构分析</span><br>
 		</form>
-	</div>
-	<iframe name="result" src="waiting.jsp" width="100%" height="80%"
-		frameborder="0"></iframe>
+		</div>
+	
+	<iframe name="result" src="waiting.jsp" width="100%" height="80%" frameborder="0"></iframe>
+
   </body>
 </html>
