@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+ "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 指定Web应用的默认编码，相当于调用request的setCharacterEncoding方法 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.configuration.xml.reload" value="true" />	
+	 
+	 <!-- 解决<s:textfiled>标签在<tr>中自动换行问题 -->
+	<constant name="struts.ui.theme" value="simple" /> 
+	<!-- s上传功能设置 -->
+	<constant name="struts.custom.i18n.resources" value="FileUploadError"/>
+	<constant name="struts.multipart.maxSize" value="31457280"/>
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	
+	<!--系统控制 -->
+	<package name="sys" namespace="/sys" extends="struts-default">
+		<action name="login" class="com.jjjl.action.sys.LoginAction"
+			method="execute">
+			<result name="success">/index.jsp</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+		<!-- <action name="toReset" class="com.jjjl.action.sys.LoginAction"
+			method="toReset">
+			<result name="sucess">/reset.jsp</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+		<action name="doReset" class="com.jjjl.action.sys.LoginAction"
+			method="doReset">
+			<result name="sucess">/login.jsp</result>
+			
+		</action> -->
+	</package>
+	
+	<!--机井 -->
+	<package name="wellB" namespace="/wellB" extends="struts-default">
+		<action name="query" class="com.jjjl.action.control.WellBAction"
+			method="query">
+			<result name="success">/JDWell/jDWellResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="detail" class="com.jjjl.action.control.WellBAction"
+			method="detail">
+			<result name="success">/JDWell/wellDetail.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+	</package>
+	
+	<!--监测井 -->
+	<package name="autoWellB" namespace="/autoWellB" extends="struts-default">
+		<action name="query" class="com.jjjl.action.control.AutoWellBAction"
+			method="query">
+			<result name="success">/JCWell/jCWellResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="detail" class="com.jjjl.action.control.AutoWellBAction"
+			method="detail">
+			<result name="success">/JCWell/jCWellDetail.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="yongshui" class="com.jjjl.action.control.AutoWellBAction" 
+			method="yongshui">
+			<result name="success">/JCWell/jCWellYongshui.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+	</package>
+	
+	<!--行政区用水汇总 -->
+	<package name="hz" namespace="/hz" extends="struts-default">
+		<action name="queryCity" class="com.jjjl.action.control.HuiZongAction"
+			method="queryCity">
+			<result name="success">/huiZong/resultHuiZongC.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>	
+		<action name="queryYear" class="com.jjjl.action.control.HuiZongAction"
+			method="queryYear">
+			<result name="success">/huiZong/resultHuiZongY.jsp</result>
+			<result name="nodata">/nodata.jsp</result>		
+		</action>
+		<action name="analyseCity" class="com.jjjl.action.control.FenXiAction"
+			method="analyseCity">
+			<result name="success">/huiZong/resultFenXi.jsp</result>
+			<result name="nodata">/nodata.jsp</result>		
+		</action>	
+	</package>
+	<!-- 数据维护 -->
+	<package name="wh" namespace="/wh" extends="struts-default">
+		<action name="query" class="com.jjjl.action.control.WellWHAction"
+			method="query">
+			<result name="success">/WeiHu/whWellResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="detail" class="com.jjjl.action.control.WellWHAction"
+			method="detail">
+			<result name="success">/WeiHu/wellDetailWH.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="edit" class="com.jjjl.action.control.WellWHAction"
+			method="edit">
+			<result name="edit">/WeiHu/well_edit.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="update" class="com.jjjl.action.control.WellWHAction" 
+			method="update">
+			<result name="success">/WeiHu/wellDetailWH.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="delete" class="com.jjjl.action.control.WellWHAction" 
+			method="delete">
+			<result name="success">/WeiHu/whWellResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="toWellAdd" class="com.jjjl.action.control.WellWHAction"
+			method="toWellAdd">
+			<result name="well_add">/WeiHu/well_add.jsp</result>
+		</action>
+		<action name="doWellAdd" class="com.jjjl.action.control.WellWHAction"
+			method="doWellAdd">
+			<result name="success">/WeiHu/whWellResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="toMonitor" class="com.jjjl.action.control.WellWHAction"
+			method="toMonitor">
+			<result name="well_tomnt">/WeiHu/wellToMnt.jsp</result>
+		</action>
+		<action name="doMonitor" class="com.jjjl.action.control.WellWHAction"
+			method="doMonitor">
+			<result name="success">/JCWell/jCWellResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+	</package>
+	<!-- 水量分配管理 -->
+	<package name="fp" namespace="/fp" extends="struts-default">
+		<action name="query" class="com.jjjl.action.control.WaterFPAction"
+			method="query">
+			<result name="success">/FenPei/waterResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="toTransact" class="com.jjjl.action.control.WaterFPAction"
+			method="toTransact">
+			<result name="water_transact">/FenPei/waterFP.jsp</result>
+		</action>
+		<action name="doTransact" class="com.jjjl.action.control.WaterFPAction"
+			method="doTransact">
+			<result name="water_manage">/FenPei/water_manage.jsp</result>
+		</action>
+		<!-- 上传协议扫描件 -->
+		<action name="upload" class="com.jjjl.action.sys.UploadAction"
+			method="upload">
+			<param name="savePath">/Upload</param><!-- 配置文件上传目录 -->
+			<result name="success">/FenPei/uploadResult.jsp</result>
+			<interceptor-ref name="fileUpload"><!-- 配置fileUpload拦截器 -->
+				<param name="maximumSize">1048576</param><!-- 配置允许上传文件大小最大值 -->
+				<param name="allowedTypes">text/plain,application/msword,image/jpeg</param><!-- 配置允许上传文件类型 -->
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+	<package name="xt" namespace="/xt" extends="struts-default">
+		<action name="logInfo" class="com.jjjl.action.control.SystemAction"
+			method="logInfo">
+		</action>
+		<action name="query" class="com.jjjl.action.control.SystemAction"
+			method="query">
+			<result name="success">/User/userResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="delete" class="com.jjjl.action.control.SystemAction" 
+			method="delete">
+			<result name="success">/User/userResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+		<action name="toUserAdd" class="com.jjjl.action.control.SystemAction"
+			method="toUserAdd">
+			<result name="user_add">/User/user_add.jsp</result>
+		</action>
+		<action name="doUserAdd" class="com.jjjl.action.control.SystemAction"
+			method="doUserAdd">
+			<result name="success">/User/userResult.jsp</result>
+			<result name="nodata">/nodata.jsp</result>
+		</action>
+	</package>
+</struts>    
