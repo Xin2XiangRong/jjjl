@@ -48,7 +48,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<option value="1410">临汾市</option>
 					<option value="1411">吕梁市</option>
 			</select>
-			<span style="height: 30px; line-height:30px; font-size: 14px;">用水结构分析</span><br>
+			<span style="height: 30px; line-height:30px; font-size: 14px;">用水结构分析</span>
+			<a href="hz/pcaAnalyse.action">用水结构演变驱动因素分析</a>
 		</form>
 		</div>
 	

@@ -1,28 +1,24 @@
 package com.jjjl.action.control;
-import java.io.PrintWriter;
+import java.awt.Desktop;
+import java.io.File;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
 import net.sf.json.JSONArray;
 
 import org.apache.log4j.Logger;
-import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import z.json.JSONObject;
-
 import com.jjjl.data.JlCityWA;
 import com.jjjl.service.JlCityWAService;
+import com.jjjl.suanfa.FileOperate;
+import com.jjjl.suanfa.PCA;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.inject.Context;
 @SuppressWarnings("all")
 @Controller
 public class FenXiAction extends ActionSupport {
@@ -33,9 +29,10 @@ public class FenXiAction extends ActionSupport {
 	@Autowired
 	private JlCityWAService jlCityWAService;
 	
-	private String cityCd;
+	private static String cityCd;
 	private String year;
-
+	
+	public static List list=new ArrayList();
 	public JlCityWAService getJlCityWAService() {
 		return jlCityWAService;
 	}
@@ -64,6 +61,8 @@ public class FenXiAction extends ActionSupport {
 		log.info("该用户查看过行政区数据分析模块");
 		ActionContext context=ActionContext.getContext();
 		Map<String, Object> session=context.getSession();
+		
+		System.out.println(cityCd+"aaaaaaa");
 		if(cityCd!=null && !cityCd.equalsIgnoreCase("")) {
 			List<JlCityWA> cityWA=jlCityWAService.findBycityCd(cityCd);		//按城市检索用来分析的数据
 			
@@ -200,5 +199,31 @@ public class FenXiAction extends ActionSupport {
 		}
 		
 	}
+	
+	public void pcaAnalyse() throws Exception{
+		String str=null;
+		if(cityCd.equals("1401"))
+			str="dataTY.txt";
+		else if(cityCd.equals("1402"))
+			str="dataDT.txt";
+		else if(cityCd.equals("1403"))
+			str="dataYQ.txt";
+		else if(cityCd.equals("1408"))
+			str="dataYC.txt";
+		else if(cityCd.equals("1411"))
+			str="dataLL.txt";
+		else 
+			str="dataQS.txt";			//只分析了五个地市的数据
+			System.out.println(cityCd);
+			System.out.println("D:\\MATLAB\\bin\\PCA\\"+str);
+	String array[][] = FileOperate.createArray("D:\\MATLAB\\bin\\PCA\\"+str);
+	double[][] data=FileOperate.arrayToDouble(array);
+      PCA test = new PCA();
+	  test.analyse(data);
+	  FileOperate.creatPCAFile(list, "E:\\830.txt");
+	  String path="E:\\830.txt";
+	  File file=new File(path);
+	  Desktop.getDesktop().open(file);
+}
 	
 }

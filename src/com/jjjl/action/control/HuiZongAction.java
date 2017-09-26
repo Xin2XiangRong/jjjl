@@ -1,30 +1,21 @@
 package com.jjjl.action.control;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
 import net.sf.json.JSONArray;
 
 import org.apache.log4j.Logger;
-import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import z.json.JSONObject;
-
 import com.jjjl.data.JlCityWB;
 import com.jjjl.data.JlCityXuKe;
-import com.jjjl.data.JlCountyXuKe;
 import com.jjjl.service.JlCityWBService;
 import com.jjjl.service.JlCityXuKeService;
-import com.jjjl.util.HtmlConvertUtil;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.inject.Context;
 @SuppressWarnings("all")
 @Controller
 public class HuiZongAction extends ActionSupport {

@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.jjjl.dao.BaseDAO;
 import com.jjjl.data.JlTownWT;
 import com.jjjl.service.JlTownWTService;
-import com.jjjl.service.JlTownWTService;
 @SuppressWarnings("all")
 @Service
 @Transactional
@@ -26,11 +25,13 @@ public class JlTownWTServiceImpl implements JlTownWTService {
 		this.baseDao = baseDao;
 	}
 
+	@Override
 	public List<JlTownWT> find(String hql, int start, int length) {
 		// TODO Auto-generated method stub
 		return baseDao.find(hql, start, length);
 	}
 
+	@Override
 	public int count(String hql) {
 		// TODO Auto-generated method stub	
 		String hql1="select count(*) "+hql;
@@ -38,6 +39,7 @@ public class JlTownWTServiceImpl implements JlTownWTService {
 	}
 
 	
+	@Override
 	public void add(JlTownWT townWT) {
 		baseDao.saveOrUpdate(townWT);
 	}

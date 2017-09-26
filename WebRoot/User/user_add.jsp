@@ -44,7 +44,7 @@
 <body>
 	<form id="form" name="form" action="xt/doUserAdd.action" method="post" >
 	<div id="accordion1" class="accordion">
-		<h3 style="font-size: 1.1em; font-weight: bold;">用户信息</h3>
+	<!-- 	<h3 style="font-size: 1.1em; font-weight: bold;">用户信息</h3> -->
 		<div class="tb_blue2">
 			<table height="30" width="60%" border="0" cellspacing="0" align="center"
 				cellpadding="0" class="border0">
@@ -77,6 +77,16 @@
 							<option value="1409">忻州市(1409)</option>
 							<option value="1410">临汾市(1410)</option>
 							<option value="1411">吕梁市(1411)</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="25%">所属地编码</td>
+					<td width="75%">
+						<!-- <input type="text" name="userB.sysUserMap.mapid"> -->
+						<select name="userB.policy">
+							<option value="0">无用户管理权限</option>
+							<option value="1">有用户管理权限</option>
 						</select>
 					</td>
 				</tr>

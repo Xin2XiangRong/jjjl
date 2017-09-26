@@ -27,26 +27,31 @@ public class SysUserBServiceImpl implements SysUserBService {
 
 	
 
+	@Override
 	public void save(SysUserB sysUserB) {
 		// TODO Auto-generated method stub
 		baseDao.save(sysUserB);
 	}
 
+	@Override
 	public void update(SysUserB sysUserB) {
 		// TODO Auto-generated method stub
 		baseDao.update(sysUserB);
 	}
 
+	@Override
 	public void delete(SysUserB sysUserB) {
 		// TODO Auto-generated method stub
 		baseDao.delete(sysUserB);
 	}
 
+	@Override
 	public SysUserB queryByUserID(String userid) {
 		// TODO Auto-generated method stub
 		return baseDao.get(SysUserB.class, userid);
 	}
 
+	@Override
 	public boolean validateByUserID(String userid) {		
 		// TODO Auto-generated method stub
 		boolean flag=false;
@@ -57,6 +62,7 @@ public class SysUserBServiceImpl implements SysUserBService {
 		return flag;
 	}
 
+	@Override
 	public boolean validateByUserIDAndPassword(String userid, String password) {
 		// TODO Auto-generated method stub
 		boolean flag=false;
@@ -69,6 +75,7 @@ public class SysUserBServiceImpl implements SysUserBService {
 		return flag;
 	}
 	
+	@Override
 	public int count(String hql) {
 		// TODO Auto-generated method stub
 		String hql1="select count(*) "+hql;

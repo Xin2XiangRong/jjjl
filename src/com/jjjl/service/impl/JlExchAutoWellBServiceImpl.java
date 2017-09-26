@@ -25,22 +25,26 @@ public class JlExchAutoWellBServiceImpl implements JlExchAutoWellBService {
 		this.baseDao = baseDao;
 	}
 
+	@Override
 	public List<JlExchAutoWellB> find(String hql, int start, int length) {
 		// TODO Auto-generated method stub
 		return baseDao.find(hql, start, length);
 	}
 
+	@Override
 	public int count(String hql) {
 		// TODO Auto-generated method stub	
 		String hql1="select count(*) "+hql;
 		return baseDao.count(hql1).intValue();
 	}
 
+	@Override
 	public JlExchAutoWellB findByWellCd(String wellCd) {
 		// TODO Auto-generated method stub
 		return baseDao.get(JlExchAutoWellB.class, wellCd);
 	}
 	
+	@Override
 	public void addWell(JlExchAutoWellB autoWellB) {
 		baseDao.saveOrUpdate(autoWellB);
 	}

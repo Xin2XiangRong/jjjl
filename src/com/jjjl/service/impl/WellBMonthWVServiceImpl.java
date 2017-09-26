@@ -28,6 +28,7 @@ public class WellBMonthWVServiceImpl implements WellBMonthWVService {
 		this.baseDao = baseDao;
 	}
 
+	@Override
 	public WellBMonthWV findByWellCd(String wellCd) {
 		// TODO Auto-generated method stub
 		System.out.println("mmmmmmm");

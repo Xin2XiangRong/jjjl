@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jjjl.dao.BaseDAO;
 import com.jjjl.data.JlCityWB;
-import com.jjjl.data.JlCityXuKe;
 import com.jjjl.service.JlCityWBService;
 @SuppressWarnings("all")
 @Service
@@ -26,12 +25,14 @@ public class JlCityWBServiceImpl implements JlCityWBService {
 		this.baseDao = baseDao;
 	}
 
+	@Override
 	public List<JlCityWB> findByyear(String year) {
 		// TODO Auto-generated method stub
 		String hql="from JlCityWB b where b.year='"+year+"'";
 		return baseDao.find(hql);
 	}
 	
+	@Override
 	public List<JlCityWB> findBycityCd(String cityCd) {
 		String hql="from JlCityWB b where b.jlCityB.cityCd='"+cityCd+"'";
 		return baseDao.find(hql);

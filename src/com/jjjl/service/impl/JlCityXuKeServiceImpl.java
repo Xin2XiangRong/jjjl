@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jjjl.dao.BaseDAO;
-import com.jjjl.data.JlCityWA;
 import com.jjjl.data.JlCityXuKe;
 import com.jjjl.service.JlCityXuKeService;
 @SuppressWarnings("all")
@@ -26,6 +25,7 @@ public class JlCityXuKeServiceImpl implements JlCityXuKeService {
 		this.baseDao = baseDao;
 	}
 	
+	@Override
 	public int count(String hql) {
 		// TODO Auto-generated method stub
 		String hql1="select count(*) "+hql;
@@ -37,12 +37,14 @@ public class JlCityXuKeServiceImpl implements JlCityXuKeService {
 		return baseDao.find(hql, start, length);
 	}
 	
+	@Override
 	public List<JlCityXuKe> findByyear(String year) {
 		// TODO Auto-generated method stub
 		String hql="from JlCityXuKe b where b.year='"+year+"'";
 		return baseDao.find(hql);
 	}
 	
+	@Override
 	public List<JlCityXuKe> findBycityCd(String cityCd) {
 		String hql="from JlCityXuKe b where b.jlCityB.cityCd='"+cityCd+"'";
 		return baseDao.find(hql);

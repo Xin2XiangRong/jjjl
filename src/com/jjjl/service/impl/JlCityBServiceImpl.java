@@ -2,11 +2,9 @@ package com.jjjl.service.impl;
 
 import java.util.List;
 
-import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 
 import org.apache.log4j.Logger;
-import org.directwebremoting.json.types.JsonArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +31,7 @@ public class JlCityBServiceImpl implements JlCityBService {
 		this.baseDao = baseDao;
 	}
 
+	@Override
 	public List<JlCityB> findAll() {
 		// TODO Auto-generated method stub
 		
@@ -40,6 +39,7 @@ public class JlCityBServiceImpl implements JlCityBService {
 		return baseDao.find(hql);
 	}
 
+	@Override
 	public List<JlCityB> findByMapid(String mapid) {
 		// TODO Auto-generated method stub
 		String hql="";
@@ -55,6 +55,7 @@ public class JlCityBServiceImpl implements JlCityBService {
 		return jsonArrayCity;
 	}
 	
+	@Override
 	public JlCityB findByCityCd(String cityCd) {
 		
 		return baseDao.get(JlCityB.class, cityCd);

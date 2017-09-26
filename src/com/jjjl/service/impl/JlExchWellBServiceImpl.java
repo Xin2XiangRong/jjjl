@@ -29,17 +29,20 @@ public class JlExchWellBServiceImpl implements JlExchWellBService {
 	public List<JlExchWellB> find(String hql) {
 		return baseDao.find(hql);
 	}
+	@Override
 	public List<JlExchWellB> find(String hql, int start, int length) {
 		// TODO Auto-generated method stub
 		return baseDao.find(hql, start, length);
 	}
 
+	@Override
 	public int count(String hql) {
 		// TODO Auto-generated method stub
 		String hql1="select count(*) "+hql;
 		return baseDao.count(hql1).intValue();
 	}
 
+	@Override
 	public JlExchWellB findByWellCd(String wellCd) {
 		// TODO Auto-generated method stub
 		System.out.println("*****"+wellCd);
@@ -47,15 +50,18 @@ public class JlExchWellBServiceImpl implements JlExchWellBService {
 		return baseDao.get(JlExchWellB.class, wellCd);
 	}
 	
+	@Override
 	public void update(JlExchWellB wellB) {
 		baseDao.saveOrUpdate(wellB);
 		System.out.println(wellB.getWellNm()+"ser");
 	}
 	
+	@Override
 	public void delete(JlExchWellB wellB) {
 		baseDao.delete(wellB);
 	}
 	
+	@Override
 	public void addWell(JlExchWellB wellB) {
 		baseDao.save(wellB);
 	}

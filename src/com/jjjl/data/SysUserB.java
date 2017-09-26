@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,7 +24,7 @@ public class SysUserB implements java.io.Serializable {
 	private String username;
 	private String password;
 	private String telphone;
-	//private String policy;
+	private String policy;
 	private Timestamp ts;
 	private String nt;
 
@@ -107,14 +106,14 @@ public class SysUserB implements java.io.Serializable {
 		this.telphone = telphone;
 	}
 
-	/*@Column(name = "POLICY", nullable = false, length = 1)
+	@Column(name = "POLICY", nullable = false, length = 1)
 	public String getPolicy() {
 		return this.policy;
 	}
 
 	public void setPolicy(String policy) {
 		this.policy = policy;
-	}*/
+	}
 
 	@Column(name = "TS",  length = 11)
 	public Timestamp getTs() {

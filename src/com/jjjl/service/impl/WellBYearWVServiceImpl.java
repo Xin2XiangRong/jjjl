@@ -23,6 +23,7 @@ public class WellBYearWVServiceImpl implements WellBYearWVService {
 		this.baseDao = baseDao;
 	}
 
+	@Override
 	public WellBYearWV findByWellCd(String wellCd) {
 		// TODO Auto-generated method stub
 		System.out.println("Year"+wellCd);

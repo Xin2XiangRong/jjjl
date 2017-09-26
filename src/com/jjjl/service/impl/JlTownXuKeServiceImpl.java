@@ -25,6 +25,7 @@ public class JlTownXuKeServiceImpl implements JlTownXuKeService {
 		this.baseDao = baseDao;
 	}
 	
+	@Override
 	public int count(String hql) {
 		// TODO Auto-generated method stub
 		String hql1="select count(*) "+hql;
@@ -36,6 +37,7 @@ public class JlTownXuKeServiceImpl implements JlTownXuKeService {
 		return baseDao.find(hql, start, length);
 	}
 
+	@Override
 	public List<JlTownXuKe> findByXiangCd(String xiangCd) {
 		String hql="from JlTownXuKe b where b.jlTownB.xiangCd='"+xiangCd+"'";
 		return baseDao.find(hql);

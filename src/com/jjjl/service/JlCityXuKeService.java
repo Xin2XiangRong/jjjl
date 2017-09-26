@@ -2,7 +2,6 @@ package com.jjjl.service;
 
 import java.util.List;
 
-import com.jjjl.data.JlCityWA;
 import com.jjjl.data.JlCityXuKe;
 
 public interface JlCityXuKeService {

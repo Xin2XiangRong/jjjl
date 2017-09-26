@@ -24,6 +24,7 @@ public class JlVillageBServiceImpl implements JlVillageBService {
 	public void setBaseDao(BaseDAO<JlVillageB> baseDao) {
 		this.baseDao = baseDao;
 	}
+	@Override
 	public List<JlVillageB> findByXiangCd(String xiangCd) {
 		// TODO Auto-generated method stub
 		String hql="from JlVillageB where jlTownB.xiangCd='"+xiangCd+"'";

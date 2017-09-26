@@ -84,6 +84,11 @@
 			<result name="success">/huiZong/resultFenXi.jsp</result>
 			<result name="nodata">/nodata.jsp</result>		
 		</action>	
+		<!-- PCA主成分分析 -->
+		<action name="pcaAnalyse" class="com.jjjl.action.control.FenXiAction"
+			method="pcaAnalyse">
+			
+		</action>
 	</package>
 	<!-- 数据维护 -->
 	<package name="wh" namespace="/wh" extends="struts-default">

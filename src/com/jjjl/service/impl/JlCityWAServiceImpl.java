@@ -27,6 +27,7 @@ public class JlCityWAServiceImpl implements JlCityWAService {
 
 
 	
+	@Override
 	public List<JlCityWA> findBycityCd(String cityCd) {
 		String hql="from JlCityWA b where b.jlCityB.cityCd='"+cityCd+"' ORDER BY year ASC";
 		return baseDao.find(hql);

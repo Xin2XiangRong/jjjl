@@ -28,11 +28,13 @@ public class WellBDayWVServiceImpl implements WellBDayWVService {
 		this.baseDao = baseDao;
 	}
 
+	@Override
 	public WellBDayWV findByWellCd(String wellCd) {
 		// TODO Auto-generated method stub
 		return baseDao.get(WellBDayWV.class, wellCd);
 	}
 	
+	@Override
 	public void setDayW(WellBDayWV wellBDayWV) {
 		Random random=new Random();
 		Integer r = random.nextInt(50)+50;

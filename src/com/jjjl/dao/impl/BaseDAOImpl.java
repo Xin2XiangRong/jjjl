@@ -29,22 +29,27 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		return sessionFactory.getCurrentSession();
 	}
 
+	@Override
 	public Serializable save(T o) {
 		return this.getCurrentSession().save(o);
 	}
 
+	@Override
 	public void delete(T o) {
 		this.getCurrentSession().delete(o);
 	}
 
+	@Override
 	public void update(T o) {
 		this.getCurrentSession().update(o);
 	}
 
+	@Override
 	public void saveOrUpdate(T o) {
 		this.getCurrentSession().saveOrUpdate(o);
 	}
 
+	@Override
 	public List<T> find(String hql) {
 		List<T> list=this.getCurrentSession().createQuery(hql).list();
 		if(list!=null && list.size()>0){
@@ -55,6 +60,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		
 	}
 
+	@Override
 	public List<T> find(String hql, Object[] param) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (param != null && param.length > 0) {
@@ -70,6 +76,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}		
 	}
 
+	@Override
 	public List<T> find(String hql, List<Object> param) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (param != null && param.size() > 0) {
@@ -85,6 +92,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}
 	}
 
+	@Override
 	public List<T> find(String hql, Object[] param, Integer page, Integer rows) {
 		if (page == null || page < 1) {
 			page = 1;
@@ -106,6 +114,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}
 	}
 
+	@Override
 	public List<T> find(String hql, List<Object> param, Integer page,
 			Integer rows) {
 		if (page == null || page < 1) {
@@ -128,6 +137,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}
 	}
 
+	@Override
 	public T get(Class<T> c, Serializable id) {		
 		T t=(T) this.getCurrentSession().get(c, id);
 		if(t!=null){
@@ -137,6 +147,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}		
 	}
 
+	@Override
 	public T get(String hql, Object[] param) {
 		List<T> l = this.find(hql, param);
 		if (l != null && l.size() > 0) {
@@ -146,6 +157,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}
 	}
 
+	@Override
 	public T get(String hql, List<Object> param) {
 		List<T> l = this.find(hql, param);
 		if (l != null && l.size() > 0) {
@@ -155,6 +167,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}
 	}
 
+	@Override
 	public Long count(String hql) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if(q.list()!=null){
@@ -164,6 +177,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}		
 	}
 
+	@Override
 	public Long count(String hql, Object[] param) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (param != null && param.length > 0) {
@@ -178,6 +192,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}
 	}
 
+	@Override
 	public Long count(String hql, List<Object> param) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (param != null && param.size() > 0) {
@@ -192,10 +207,12 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		}
 	}
 
+	@Override
 	public Integer executeHql(String hql) {
 		return this.getCurrentSession().createQuery(hql).executeUpdate();
 	}
 
+	@Override
 	public Integer executeHql(String hql, Object[] param) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (param != null && param.length > 0) {
@@ -206,6 +223,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		return q.executeUpdate();
 	}
 
+	@Override
 	public Integer executeHql(String hql, List<Object> param) {
 		Query q = this.getCurrentSession().createQuery(hql);
 		if (param != null && param.size() > 0) {
@@ -216,6 +234,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		return q.executeUpdate();
 	}
 
+	@Override
 	public List<T> find(String hql, int start, int length) {
 		// TODO Auto-generated method stub
 		Query q = this.getCurrentSession().createQuery(hql);

@@ -30,6 +30,7 @@ public class JlCountyBServiceImpl implements JlCountyBService {
 		this.baseDao = baseDao;
 	}
 
+	@Override
 	public List<JlCountyB> findByCityCd(String cityCd) {
 		// TODO Auto-generated method stub
 		String hql="from JlCountyB where jlCityB.cityCd='"+cityCd+"'";
